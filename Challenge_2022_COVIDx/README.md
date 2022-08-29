@@ -1,7 +1,7 @@
 # COVIDx Challenge
 **29-Aug-2022**
 
-**CHALLENGE SUMMARY**: Some information about the purpose of the challenge should go here.
+**CHALLENGE SUMMARY**: The goal of this Challenge is to train an AI/machine learning model in the task of distinguishing between COVID-negative and COVID-positive patients using frontal-view portable chest radiographs (CXRs).
 
 **DATA**: This folder contains the metadata files for the Challenge Dataset as well as the Gen3 manifest file needed to download the image data files from the MIDRC Data Commons. It also contains a Jupyter Notebook that demonstrates how the cohort for the dataset was selected.
 
