@@ -7,7 +7,7 @@
 
 The inclusion criteria used in the Jupyter notebook for selection of suitable imaging studies were: 1) portable chest radiographs, 2) adult patients, 3) a valid COVID test result within 0 to 14 days prior to the imaging study. We strongly encourage you to further curate the data after downloading to eliminate images that may not be useful for model training (such as processed images etc.). You may also wish to modify the notebook to suit your particular needs, e.g., to download a smaller cohort if bandwidth or data storage are concerns.  
 
-If you would like to run this notebook on your own to build a cohort, you can do so within the Workspace tab on data.midrc.org or locally. When doing so locally, you must have Python 3.x (and the Jupyter python package) installed on your local system. In addition, make sure you follow the instructions in the MIDRC Quick Start Guide [1] to set up your MIDRC account. You will need to use your MIDRC credentials "API key" file within the notebook. If you need assistance with Jupyter Notebooks, please check out some of the references below [2,3]!
+If you would like to run this notebook on your own to build a cohort, you can do so within the Workspace tab on data.midrc.org or locally. When doing so locally, you must have Python 3.x (and the Jupyter python package) installed on your local system [2]. In addition, make sure you follow the instructions in the MIDRC Quick Start Guide [1] to set up your MIDRC account. If you would like to run the notebook locally, you will need to create and use a MIDRC "API key" credentials file [1]. If you need assistance with Jupyter Notebooks, please check out some of the references below [2,3]!
 
 References
 ---
