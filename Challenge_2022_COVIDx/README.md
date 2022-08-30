@@ -11,6 +11,6 @@ If you would like to run this notebook on your own to build a cohort, you can do
 
 References
 ---
-1)  For the MIDRC Quick Start Guide, please see https://www.midrc.org/s/Gen3-MIDRC-QRG20210831.pdf
+1)  For the MIDRC Quick Start Guide, please see https://www.midrc.org/s/Gen3-MIDRC-QRGv2.pdf
 2)  For information on installing the Jupyter Notebook system, please see https://jupyter.org/install
 3)  For information on using Jupyter Notebooks, please see https://www.codecademy.com/article/how-to-use-jupyter-notebooks
