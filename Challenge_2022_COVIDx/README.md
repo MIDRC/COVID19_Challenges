@@ -7,12 +7,27 @@
 
 The inclusion criteria used in the Jupyter notebook for selection of suitable imaging studies were: 1) portable chest radiographs, 2) adult patients, 3) a valid COVID test result within 0 to 14 days prior to the imaging study. We strongly encourage you to further curate the data after downloading to eliminate images that may not be useful for model training (such as processed images etc.). You may wish to modify the notebook to suit your particular needs.  
 
-If you would like to run this notebook on your own to build a cohort, you can do so within the Workspace tab on data.midrc.org or locally on your own computer. Note that some cells in the notebook are specific to running it within a Workspace and others are specific to running it locally, as indicated. When doing so locally, you must have Python 3.x and the Jupyter python package installed, and first create and use a MIDRC "API key" credentials file as decribed in the Quick Start Guide (steps 1-4) [1]. Creating an "API key" needs to be done before querying or downloading data. 
+## Helpful Tips
+
+### Notebook Tips
+If you would like to run this notebook on your own to build a cohort, you can do so within the Workspace tab on [data.midrc.org](https://data.midrc.org) or locally on your own computer. Note that some cells in the notebook are specific to running it within the MIDRC Workspace and others are specific to running it locally, as indicated. When doing so locally, you must have Python 3.x and the Jupyter python package installed, and first create and use a MIDRC "API key" credentials file as decribed in the Quick Start Guide (steps 1-4) [1]. Creating an "API key" needs to be done before querying or downloading data. 
 
 If you need assistance with Jupyter Notebooks, please check out some of the references below [2,3]!
 
-References
----
-1)  For the MIDRC Quick Start Guide, please see https://www.midrc.org/s/Gen3-MIDRC-QRGv2.pdf
-2)  For information on installing the Jupyter Notebook system, please see https://jupyter.org/install
-3)  For information on using Jupyter Notebooks, please see https://www.codecademy.com/article/how-to-use-jupyter-notebooks
+### Downloading Tips
+When using the `gen3-client` application to download cases, we recommend using the following command line settings:
+
+`gen3-client download-multiple --profile=<your profile name> --numparallel=2 --skip-completed --manifest=<location of manifest file> --download-path=<path_for_files>`
+
+Where `<your profile name>` is the name of the profile you created with your API credentials key, `<location of manifest file>` is the location of the `MIDRC_COVIDx_challenge_1_imaging_studies_covid_manifest.json` file on your local system, and `<path_for_files>` is the directory you would like to use to store your downloaded files. The `numparallel` option will improve the efficiency and performance of your download. The `skip-completed` option will make the application check to see if any of the cases in the manifest file have already been downloaded to the directory you selected. This is extremely helpful if you ever need to restart a download that was interrupted -- just run the same command again, and the application will rebuild your file list and then pick up right where it left off! 
+
+The full download will consist of approx. **XX** cases and will require approx. **XX GB** of space (compressed). In previous tests, the full download took **XX hours** with a broadband connection.
+
+If you would like more information about how to operate the gen3-client app, please check out the reference below [4]!
+
+
+## References
+1.  For the MIDRC Quick Start Guide, please see https://www.midrc.org/s/Gen3-MIDRC-QRGv2.pdf
+2.  For information on installing the Jupyter Notebook system, please see https://jupyter.org/install
+3.  For information on using Jupyter Notebooks, please see https://www.codecademy.com/article/how-to-use-jupyter-notebooks
+4.  For information on using the Gen3 Client App to download cases, please see https://gen3.org/resources/user/gen3-client/#5-multiple-file-download-with-manifest
