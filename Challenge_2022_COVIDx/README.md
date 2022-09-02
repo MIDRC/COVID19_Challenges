@@ -21,7 +21,7 @@ When using the `gen3-client` application to download cases, we recommend using t
 
 Where `<your profile name>` is the name of the profile you created with your API credentials key, `<location of manifest file>` is the location of the `MIDRC_COVIDx_challenge_1_imaging_studies_covid_manifest.json` file on your local system, and `<path_for_files>` is the directory you would like to use to store your downloaded files. The `numparallel` option will improve the efficiency and performance of your download. The `skip-completed` option will make the application check to see if any of the cases in the manifest file have already been downloaded to the directory you selected. This is extremely helpful if you ever need to restart a download that was interrupted -- just run the same command again, and the application will rebuild your file list and then pick up right where it left off! 
 
-The full download will consist of approx. **XX** cases and will require approx. **XX GB** of space (compressed). In previous tests, the full download took **XX hours** with a broadband connection.
+The full download will consist of approx. **6,650** patients and will require approx. **285 GB** of space (compressed). In previous tests, the full download took **XX hours** with a broadband connection.
 
 If you would like more information about how to operate the gen3-client app, please check out the reference below [4]!
 
