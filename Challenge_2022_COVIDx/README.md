@@ -8,7 +8,7 @@
 The inclusion criteria used in the Jupyter notebook for selection of suitable imaging studies were: 1) portable chest radiographs, 2) adult patients, 3) a valid COVID test result within 0 to 14 days prior to the imaging study. We strongly encourage you to further curate the data after downloading to eliminate images that may not be useful for model training (such as processed images etc.). You may wish to modify the notebook to suit your particular needs.  
 
 ## File List
-* **node_tsvs**: folder containing the raw metadata downloaded from the MIDRC Datacommons
+* **node_tsvs**: folder containing the raw metadata downloaded from the MIDRC Data Commons
 * **COVIDx_Challenge_Study_Selection.ipynb**: Jupyter Notebook that demonstrates how the training dataset was generated
 * **COVIDx_training_imagingStudy_COVIDstatus.tsv**: merged metadata and imaging study UIDs of the dataset with duplicate UIDs removed (see notebook for details)
 * **DX_imaging_studies_plus_covid_tests.tsv**: merged metadata and imaging study UIDs of the full dataset
