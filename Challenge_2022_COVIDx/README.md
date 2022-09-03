@@ -10,8 +10,8 @@ The inclusion criteria used in the Jupyter notebook for selection of suitable im
 ## File List
 * **node_tsvs**: folder containing the raw metadata downloaded from the MIDRC Datacommons
 * **COVIDx_Challenge_Study_Selection.ipynb**: Jupyter Notebook that demonstrates how the training dataset was generated
-* **COVIDx_training_imagingStudy_COVIDstatus.tsv**: 
-* **DX_imaging_studies_plus_covid_tests.tsv**: 
+* **COVIDx_training_imagingStudy_COVIDstatus.tsv**: merged metadata and imaging study UIDs of the dataset with duplicate UIDs removed (see notebook for details)
+* **DX_imaging_studies_plus_covid_tests.tsv**: merged metadata and imaging study UIDs of the full dataset
 * **Imaging_Covid_Status_Object_Names.tsv**: a list of the object names (and case IDs) for each imaging study that matches the cohort criteria
 * **MIDRC_COVIDx_challenge_1_imaging_studies_covid_manifest.json**: manifest file for use with the [`gen3-client`](https://github.com/uc-cdis/cdis-data-client/releases/latest) application to download image data
 
