@@ -1,5 +1,5 @@
 # COVIDx Challenge
-**29-Aug-2022**
+**6-Sep-2022**
 
 **CHALLENGE SUMMARY**: The goal of this Challenge is to train an AI/machine learning model in the task of distinguishing between COVID-negative and COVID-positive patients using anteroposterior (AP) view portable chest radiographs (CXRs).
 
