@@ -3,7 +3,7 @@
 
 **CHALLENGE SUMMARY**: The goal of this Challenge is to train an AI/machine learning model in the task of distinguishing between COVID-negative and COVID-positive patients using anteroposterior (AP) view portable chest radiographs (CXRs).
 
-**DATA**: This folder contains several items to get you started in building a training cohort for the MIDRC COVIDx Challenge: 1) a Jupyter Notebook that demonstrates how a training dataset can be created from current publicly available MIDRC data, and 2) as an alternative to running this notebook yourself, we have provided output of the notebook applied to data.midrc.org on August 29, 2022: a) metadata files in tsv format and b) the corresponding Gen3 json manifest file for downloading imaging studies from data.midrc.org.
+**DATA**: This folder contains several items to get you started in building a training cohort for the MIDRC COVIDx Challenge: 1) a Jupyter Notebook that demonstrates how a training dataset can be created from current publicly available MIDRC data, and 2) as an alternative to running this notebook yourself, we have provided output of the notebook applied to data.midrc.org on September 6, 2022: a) metadata files in tsv format and b) the corresponding Gen3 json manifest file for downloading imaging studies from data.midrc.org.
 
 The inclusion criteria used in the Jupyter notebook for selection of suitable imaging studies were: 1) portable chest radiographs, 2) adult patients, 3) a valid COVID test result within 0 to 14 days prior to the imaging study. We strongly encourage you to further curate the data after downloading to eliminate images that may not be useful for model training (such as processed images etc.). You may wish to modify the notebook to suit your particular needs.  
 
