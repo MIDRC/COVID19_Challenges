@@ -34,7 +34,7 @@ Where:
 
 The `numparallel` option will improve the efficiency and performance of your download. The `skip-completed` option will make the application check to see if any of the cases in the manifest file have already been downloaded to the directory you selected. This is extremely helpful if you ever need to restart a download that was interrupted -- just run the same command again, and the application will rebuild your file list and then pick up right where it left off! 
 
-The full download using our json file manifest will consist of **6,649** patients (22,000+ imaging studies) and will require approx. **285 GB** of space (compressed). In previous tests, the full download took **7-8 hours** with a broadband connection.
+The full download using our json file manifest will consist of **6,800** patients (22,000+ imaging studies) and will require approx. **295 GB** of space (compressed). In previous tests, the full download took **7-8 hours** with a broadband connection.
 
 If you would like more information about how to operate the [`gen3-client`](https://github.com/uc-cdis/cdis-data-client/releases/latest) app, please check out the reference below [4]!
 
