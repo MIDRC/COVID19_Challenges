@@ -18,7 +18,7 @@ The inclusion criteria used in the Jupyter notebook for selection of suitable im
 ## Helpful Tips
 
 ### Notebook Tips
-If you would like to run this notebook on your own to build a cohort, you can do so within the Workspace tab on [data.midrc.org](https://data.midrc.org) or locally on your own computer. Note that some cells in the notebook are specific to running it within the MIDRC Workspace and others are specific to running it locally, as indicated. When doing so locally, you must have Python 3.x and the Jupyter python package installed, and first create and use a MIDRC "API key" credentials file as decribed in the Quick Start Guide (steps 1-4) [1]. Creating an "API key" needs to be done before querying or downloading data. 
+If you would like to run this notebook on your own to build a cohort, you can do so within the Workspace tab on [data.midrc.org](https://data.midrc.org) **[apologies, workspaces are currently disabled on data.midrc.org]** or locally on your own computer. Note that some cells in the notebook are specific to running it within the MIDRC Workspace and others are specific to running it locally, as indicated. When doing so locally, you must have Python 3.x and the Jupyter python package installed, and first create and use a MIDRC "API key" credentials file as decribed in the Quick Start Guide (steps 1-4) [1]. Creating an "API key" needs to be done before querying or downloading data. 
 
 If you need assistance with Jupyter Notebooks, please check out some of the references below [2,3]!
 
