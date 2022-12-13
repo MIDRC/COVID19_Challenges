@@ -1,3 +1,5 @@
+# Submission - codename DropRotx4
+
 <ins>Training data selection and curation:</ins>
 
 Chest radiograph from the data.midrc.org website were used, and downloaded using the Gen3 agent as described in the COVIDx [Challenge GitHub repo](https://github.com/MIDRC/COVID19_Challenges/tree/main/Challenge_2022_COVIDx). Further selection of radiograph was done as follow: 
