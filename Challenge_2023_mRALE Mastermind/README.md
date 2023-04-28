@@ -1,4 +1,4 @@
-# MIDRC mRALE Mastermind Challenge
+# mRALE Mastermind Challenge
 **28-Apr-2023**
 
 **CHALLENGE SUMMARY**: The goal of this Challenge is to train an AI/machine learning model in the task of predicting COVID severity on portable chest radiographs (CXRs).
@@ -33,16 +33,18 @@ The full download using our json file manifest will consist of **2,079** imaging
 
 **NOTE:** You may receive an error like the one below during your download. This is due to a known bug in the client and a fix is currently in progress. It does not actually impact the download process and all of the cases in the manifest will indeed download correctly (the error itself is an error), so you may safely ignore this error message.
 
-`2023/04/28 08:37:52 2 files have encountered an error during downloading, detailed error messages are:
+```
+2023/04/28 08:37:52 2 files have encountered an error during downloading, detailed error messages are:
 2023/04/28 08:37:52 Got a non-200 or non-206 response when making request to URL associated with GUID dg.MD1R/8da932f4-e28e-4eba-b946-acd541ac5561
  HTTP status code for response: 416
 2023/04/28 08:37:52 Got a non-200 or non-206 response when making request to URL associated with GUID dg.MD1R/4009d590-3055-403b-aac3-f293b9e980eb
- HTTP status code for response: 416`
+ HTTP status code for response: 416
+ ```
 
 If you would like more information about how to operate the [`gen3-client`](https://github.com/uc-cdis/cdis-data-client/releases/latest) app, please check out the reference below [2,3]!
 
 
 ## References
-1.  Li MD, Arun NT, Gidwani M, Chang K, Deng F, Little BP, Mendoza DP, Lang M, Lee SI, O'Shea A, Parakh A, Singh P, Kalpathy-Cramer J. Automated Assessment and Tracking of COVID-19 Pulmonary Disease Severity on Chest Radiographs using Convolutional Siamese Neural Networks. Radiol Artif Intell. 2020 Jul 22;2(4):e200079. doi: 10.1148/ryai.2020200079. PMID: 33928256; PMCID: PMC7392327.
+1.  Li MD, Arun NT, Gidwani M, Chang K, Deng F, Little BP, Mendoza DP, Lang M, Lee SI, O'Shea A, Parakh A, Singh P, Kalpathy-Cramer J. Automated Assessment and Tracking of COVID-19 Pulmonary Disease Severity on Chest Radiographs using Convolutional Siamese Neural Networks. Radiol Artif Intell. 2020 Jul 22;2(4):e200079. [doi: 10.1148/ryai.2020200079](https://doi.org/10.1148/ryai.2020200079). PMID: 33928256; PMCID: PMC7392327.
 2.  For the MIDRC Quick Start Guide, please see https://www.midrc.org/s/Gen3-MIDRC-QRGv2.pdf
 3.  For information on using the Gen3 Client App to download cases, please see https://gen3.org/resources/user/gen3-client/#5-multiple-file-download-with-manifest
