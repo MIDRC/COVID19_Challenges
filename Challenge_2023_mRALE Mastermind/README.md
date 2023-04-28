@@ -11,6 +11,8 @@ For the sake of completeness, the original 'raw' radiologist annotations are pro
 
 The inclusion criteria used in the selection of suitable imaging studies were: 1) portable chest radiographs, 2) adult patients, 3) CXR acquisition within 2 days after a positive COVID test, and 4) CXR exam of sufficient image quality to allow for radiologist annotation. Note that the MIDRC data portal continues to make new imaging studies publicly available on a regular basis; as such, there may be other unannotated portable CXRs currently available in the data portal that satisfy these criteria but were not available at the time of the radiologist annotation project.
 
+Once downloaded, participants may wish to further curate their image data and (for example) eliminate post-processed images, as these types of images will not be part of the validation or test set.
+
 ## File List
 * **annotated_images_manifest_2079.json**: manifest file for use with the [`gen3-client`](https://github.com/uc-cdis/cdis-data-client/releases/latest) application to download image data
 * **MIDRC mRALE Mastermind Training Annotations_2079_20230428.csv**: the mRALE assessment data for each imaging study that matches the cohort criteria
