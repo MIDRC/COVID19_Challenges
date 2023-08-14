@@ -1,0 +1,3 @@
+This submission contains a fusion of 5 ResNet-50 models trained on 5 folds the original training data for cross-validation. This model was trained starting from pre-trained weights from TorchXRayVision, using a regression head and MSE loss.
+
+We used only MIDRC training data when fine-tuning our model, we initialized our model with pre-trained weights from the public TorchXRayVision library which are trained on public CXR datasets for other tasks. In the training of our model we only used the MIDRC training data provided.
