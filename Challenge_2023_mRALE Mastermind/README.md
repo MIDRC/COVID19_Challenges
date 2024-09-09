@@ -22,10 +22,50 @@ Once downloaded, participants may wish to further curate their image data and (f
 ### Downloading Tips
 When using the [`gen3-client`](https://github.com/uc-cdis/cdis-data-client/releases/latest) application to download cases, we recommend using the following command line settings:
 
-`gen3-client download-multiple --profile=<your profile name> --numparallel=2 --skip-completed=true --manifest=<location of manifest file> --download-path=<path_for_files>`
+[Use these instructions](https://data.midrc.org/dashboard/Public/documentation/Gen3_MIDRC_GetStarted.pdf)
+
+```bash
+location_of_manifest_file=./annotated_images_manifest_2079.json
+path_for_files=./path_for_files
+path_to_cred=./credentials.json
+```
+
+```bash
+./gen3-client configure --profile=midrc --cred=$path_to_cred --apiendpoint=https://data.midrc.org/
+```
+
+output:
+```bash
+2024/09/09 19:05:39 Profile 'midrc' has been configured successfully.
+```
+
+```bash
+./gen3-client download-multiple \
+  --profile=midrc \
+  --numparallel=2 \
+  --skip-completed=true \
+  --manifest=$location_of_manifest_file \
+  --download-path=$path_for_files
+```
+
+output:
+```bash
+bearceb@pop-os:~/Downloads/dataclient_linux$ ./gen3-client download-multiple \
+  --profile=midrc \
+  --numparallel=2 \
+  --skip-completed=true \
+  --manifest=$location_of_manifest_file \
+  --download-path=$path_for_files
+2024/09/09 19:06:39 Reading manifest...
+ 157.99 KiB / 157.99 KiB [====================================================================================================] 100.00% 0s
+WARNING: flag "rename" was set to false in "original" mode, duplicated files under "./path_for_files/" will be overwritten
+Proceed? [y/n]: y
+2024/09/09 19:07:01 Total number of objects in manifest: 2568
+2024/09/09 19:07:01 Preparing file info for each file, please wait...
+ 54 / 2568 [==>-----------------------------------------------------------------------------------------------------------]   2.10% 07m53s
+```
 
 Where:
-* `<your profile name>` is the name of the profile you created with your API credentials key
 * `<location of manifest file>` is the location of the `annotated_images_manifest_2079.json` file on your local system
 * `<path_for_files>` is the directory you would like to use to store your downloaded files
 
