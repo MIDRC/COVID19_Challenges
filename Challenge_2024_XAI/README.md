@@ -1,7 +1,7 @@
 # MIDRC XAI Grand Challenge
 **28-Oct-2024**
 
-**PROBLEM DEFINITION**: This MIDRC XAI Challenge addressed the critical unmet need of making medical image analysis AI models explainable. Existing saliency map techniques, such as Grad-CAM and LIME, offer visual explanations of AI decision-making processes but have notable shortcomings; 1) these techniques often lack consistency and reliability, sometimes producing different explanations for similar inputs, 2) different techniques can offer drastically different 'explanations' for output of the same AI model for the same input, 3) various techniques can be impacted by minor perturbations in the input data, leading to variations in the generated saliency maps that undermine their trustworthiness [REF], and 4) saliency maps only typically highlight regions of an image without providing clear, interpretable insights into why those regions are significant. 
+**PROBLEM DEFINITION**: This MIDRC XAI Challenge addressed the critical unmet need of making medical image analysis AI models explainable. Existing saliency map techniques, such as Grad-CAM and LIME, offer visual explanations of AI decision-making processes but have notable shortcomings; 1) these techniques often lack consistency and reliability, sometimes producing different explanations for similar inputs, 2) different techniques can offer drastically different 'explanations' for output of the same AI model for the same input, 3) various techniques can be impacted by minor perturbations in the input data, leading to variations in the generated saliency maps that undermine their trustworthiness [1], and 4) saliency maps only typically highlight regions of an image without providing clear, interpretable insights into why those regions are significant. 
 
 The black-box nature of these AI models, combined with the opaque explanations provided by current saliency map techniques, hinders their potential utility in clinical settings, where transparency and interpretability are paramount for gaining the trust of healthcare professionals. Thus, there is a pressing need for more robust, reliable, and interpretable explainability methods in AI-driven medical image analysis.
 
@@ -9,4 +9,4 @@ The black-box nature of these AI models, combined with the opaque explanations p
 
 
 ## References
-1.  
+1. https://doi.org/10.1148/ryai.2021200267
