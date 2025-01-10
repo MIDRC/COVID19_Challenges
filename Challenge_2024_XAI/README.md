@@ -7,6 +7,10 @@ The black-box nature of these AI models, combined with the opaque explanations p
 
 **CHALLENGE SUMMARY**: The XAI Challenge aimed to advance explainable AI for medical image analysis. Participants were tasked with developing and training explainable artificial intelligence/machine learning (AI/ML) model(s) in the task of classifying frontal-view MIDRC portable chest radiographs (CXRs) for the presence of lung opacities associated with any type of pneumonia for evaluation against the reference standard for the validation and test datasets. The AI/ML output for each CXR was 1) a likelihood that the patient presented with pneumonia of any type, and 2) an 'explainability' map, interpretable as the probability of presence of lung opacity at each pixel (of the same size as the input image). This Challenge used Docker as a containerization solution.
 
+**REPOSITORY CONTENTS**: For each of the top 15 participants, this repository contains:
+* A zip archive with everything needed to run the trained model: code, weights, Dockerfile, and requirements
+* A description of the training data, training approaches, and model architecture, including literature references
+
 
 ## References
 1. https://doi.org/10.1148/ryai.2021200267
