@@ -1,5 +1,7 @@
 # Algorithms and Models
-> Participant submissions were zipped up with models included
+> For each of the top 15 participants, this repository contains:
+* A zip archive with everything needed to run the trained model: code, weights, Dockerfile, and requirements
+* A description of the training data, training approaches, and model architecture, including literature references
 
 ## Winner
 [Submission Download]()
@@ -36,3 +38,27 @@
 ## Ninth Place
 [Submission Download]()
 [Submission Description](ninth_place_algorithm_description.md)
+
+## Tenth Place
+[Submission Download]()
+[Submission Description](tenth_place_algorithm_description.md)
+
+## Eleventh Place
+[Submission Download]()
+[Submission Description](eleventh_place_algorithm_description.md)
+
+## Twelfth Place
+[Submission Download]()
+[Submission Description](twelfth_place_algorithm_description.md)
+
+## Thirteenth Place
+[Submission Download]()
+[Submission Description](thirteenth_place_algorithm_description.md)
+
+## Fourteenth Place
+[Submission Download]()
+[Submission Description](fourteenth_place_algorithm_description.md)
+
+## Fiftheenth Place
+[Submission Download]()
+[Submission Description](fifteenth_place_algorithm_description.md)
