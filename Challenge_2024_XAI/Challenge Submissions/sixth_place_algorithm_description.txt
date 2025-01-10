@@ -1,0 +1,30 @@
+This document discusses the submission by team Latent Shift in the "MIDRC XAI Challenge: Decoding AI decisions for pneumonia on chest radiographs". 
+Author: Joseph Paul Cohen 2024
+Code: https://github.com/ieee8023/midrc-xai-submission
+
+## Classification:
+Two classifiers are used from TorchXrayVision
+
+DenseNet 224x224 - Trained on the RSNA Pneumonia dataset. The training is done with a resolution of 224x224. 
+The RSNA Pneumonia dataset consists of 26,684 images, all of which are used for model training. 
+
+ResNet 512x512 – Trained with a resolution of 512x512 from multiple datasets: PADCHEST, ChestX-ray8, RSNA Pneumonia, SIIM Pneumothorax, and VinBrain. 
+In total, 325,384 frontal chest X-ray images are used to train the model.
+
+## Explanation
+The Latent Shift method is used to explain the model predictions. This approach generates a counterfactual image which is a version of the image where the classifier does not predict pneumonia anymore. 
+
+This approach accurately reflects the classifier's decision-making process, as it leverages the classifier's gradients, which directly represent its internal logic.
+Traditional gradient-based heatmaps also use gradients, but they are limited to independent pixel attribution, which cannot capture the simultaneous changes in relevant pixels. The Latent Shift method overcomes this limitation by employing a latent variable model to represent these relationships.
+
+To generate a counterfactual image, the method computes the gradient from the classifier’s output to the latent space of an autoencoder that reconstructs the input image. The latent space tensor is updated by subtracting this gradient which is then reconstructed to create an image for which the classifier will predict less positive. 
+
+A 768x768 resolution version is used for this work. For this work a VQ-GANis used which was trained with the same datasets as the ResNet classifier.
+
+## Pre-processing
+
+The images are read using pydicom and normalized for the TorchXRayVision library pixel range of [-1024, 1024] and then resized using bilinear interpolation using skimage.
+
+## Post-processing
+
+The difference between the image and counterfactual is very sharp and specific which didn't satisfy the evaluation metrics well. To improve the score the difference image is normalized to saturate the image. This creates attribution outside the lung area where there should be no opacity. A lung segmentation from TorchXRayVision is used to create a mask for the lung area and then this mask is used to crop out the surrounding area.

@@ -1,0 +1,14 @@
+Source and number of cases used to train your classification algorithm:
+We trained an ensemble of models for segmenting lung opacities from chest x-ray data. For this purpose, we used 543+135 images sourced from the validation and test sets of the chexlocalize dataset, with opacity segmentations provided by a team of radiologists. 
+
+Image pre-processing steps (if any)
+For constructing the classification dataset, we first predicted lung areas with the lung segmentation model, and then masked out regions outside lungs. Besides seeing only the lung interior, conventional data augmentation was applied, e.g. resizing to a common (512,512) resolution, random horizontal flips and brightness perturbations.
+
+The classification algorithm/model developed/used for by-image classification
+The assembled training dataset included included also images with no present opacity, extracted from the same dataset under the category of "no finding". We derived a classification score out the segmentation model by finding the pixel with highest probability of belonging to an opacity. 
+
+We used an ensemble of ten encoder-decoder nets composed of a Mixed-Image-Transformer/Resnet50 for the decoder, pretrained on the Imagenet database, and a Feature-Pyramid Networks decoder. These models were trained in a five-fold cross-validation manner to find opacities inside the lung. All models were trained with a batch-size of 8 images and a cyclical learning rate of 1e-4, using the N-ADAM optimization algorithm, for 30 epochs, checking the validation set dice score each 5 epochs and selecting the best model over the learning process. For inference, test-time augmentation with an horizontal flip was applied.
+
+The explainability technique developed/used (e.g., saliency maps, probability maps). Please ensure that the explainability maps illustrate the regions of each image that most strongly influenced the classifier’s decision. These maps should highlight the model's internal decision-making process, not serve as independent segmentation outputs.
+The classification explainability is straightforward in this approach, since the opacity-presence prediction is derived directly from the probabilistic segmentation map. Because our models were trained with negative images and using with cross-entropy loss rather than dice loss or combinations that include a dice loss component, we expect the segmentations to be well-calibrated. Therefore, whenever the model encounters a negative image, we expect to find a lower pixel-wise prediction values, resuting in a lower classification score. If an image is predicted as positive, it is immediate to understand the reason for this, since we have access to the region of the image from which this prediction was derived without any further effort.
+

@@ -1,0 +1,14 @@
+Model Description for XAI Competition Submission:
+
+Dataset:
+The classification model was trained on a dataset of 30,227 chest X-ray images provided by the Radiological Society of North America (RSNA) as part of their Pneumonia Detection Challenge (https://www.rsna.org/rsnai/ai-image-challenge/rsna-pneumonia-detection-challenge-2018).
+
+Image Pre-processing:
+For training, the original 1024x1024-pixel images were resized to 224x224 pixels. Standard torchvision augmentations, such as RandomHorizontalFlip, RandomResizedCrop, and RandomAffine, were applied to enhance model generalization. Pixel values were then normalized to the range [-3, 3].
+During inference, input images with varying sizes (H, W) were first center-cropped to (D, D), where D is the smaller dimension (either H or W). These cropped images were subsequently resized to 224x224, and pixel values were again normalized to the same range [-3, 3]. The final attribution map was resized to DxD and zero-padded to restore the original image dimensions.
+
+Classification Model:
+The classification system is built upon the Vision Transformer (ViT) architecture, specifically using the DINO ViTs8 model. The DINO backbone, pre-trained using self-supervised learning on natural images, was fine-tuned in a supervised manner for the pneumonia detection task. This model was chosen for its known ability to produce meaningful attention maps.
+
+Explainability Technique:
+To provide explainability, we utilized a novel gradient-based method called Class-Discriminative Attention Maps (CDAM), as described in the preprint publication (https://arxiv.org/abs/2312.02364). The CDAM score is computed patch-wise as an importance score for each visual token (patch). Specifically, it is calculated as the dot product between layer-normalized tokens and their corresponding gradients in the last block of the ViT encoder. The absolute values of the CDAM scores are then used, and the resulting heatmap is dilated to reduce sparsity. Finally, the heatmap scores are transformed to the range [0, 1] and scaled by predicted probability.

@@ -1,0 +1,18 @@
+For this challenge, I used two datasets: 1) RSNA Pneumonia Detection Challenge and 2) SIIM-FISABIO-RSNA COVID-19 Detection Challenge, both hosted on Kaggle. The main reason for using these datasets is the availability of bounding box annotations.
+
+The RSNA Pneumonia Detection Challenge dataset comprised 26,684 chest radiographs, of which 6,012 are positive for opacity. The SIIM-FISABIO-RSNA COVID-19 Detection Challenge dataset comprised 6,334 chest radiographs, of which 4,294 are positive for opacity.
+
+I converted the bounding box annotations for each dataset to segmentation by masks by using the bounding box coordinates to generate an ellipse which is contained with the specified box. I binarized the classification labels for both datasets to no opactiy and opacity. 
+
+I trained U-Net encoder-decoder models to produce a pixel-wise probability map and a classification score. The decoder's probability map output is downsampled using a max pooling layer and then fed into a small classification head consisting of two convolution-batch normalization-ReLU activation blocks, an average pooling layer, and a linear classification head to generate a scalar classification score. After experimenting with different encoder backbones, I settled on the following 4: 1) EfficientNetV2-M, 2) SEResNet152, 3) TinyViT, 4) MaxViT-T. Pretrained weights were taken from https://github.com/huggingface/pytorch-image-models.
+
+Both public datasets were combined into a single dataset. I used a combined weighted BCE loss with positive weight of 30 (to approximate the competition metric) for the pixel-wise probability map and a simple BCE loss for the classification score. The model was trained for 10 epochs. For each epoch, 12,000 cases were sampled, with a positive-negative ratio of 80:20 to approximate the expected distribution of the test data. During training, deep supervision was employed for additional regularization. This incorporates outputs from intermediate layers of the decoder to optimize the pixel-wise classification part of the model. The same training procedure was applied to each encoder backbone (4 models). Then, CutMix data augmentation was used to train 4 more models.
+
+During inference, test-time augmentation was applied with horizontal flip (2 predictions per image per model). There were 8 models in the ensemble. The 8 predictions for each image across 2 flips and 8 models were averaged to generate the final predictions. 
+
+References:
+- Stein A, Wu C, Carr C, et al. RSNA Pneumonia Detection Challenge. Kaggle. https://kaggle.com/competitions/rsna-pneumonia-detection-challenge
+- Kemp A, Zawacki A, Carr C, et al. SIIM-FISABIO-RSNA COVID-19 Detection. Kaggle. https://kaggle.com/competitions/siim-covid19-detection
+- Ronneberger O, Fischer P, Brox T. U-Net: Convolutional Neural Networks for Biomedical Image Segmentation. (2015). arXiv. https://arxiv.org/abs/1505.04597
+- Lee C, Xie S, Gallagher P, Zhang Z, Tu Z. Deeply-Supervised Nets. (2015). Proceedings of Machine Learning Research. https://proceedings.mlr.press/v38/lee15a.html
+- Yun S, Han D, Oh S, Chun S, Choe J, Yoo Y. CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features. (2019). arXiv. https://arxiv.org/abs/1905.04899

@@ -1,0 +1,10 @@
+Author: Jungrae Cho (zzemb6@gmail.com, Kyungpook National University Hospital)
+Method:
+- Model: ResNet50 (ImageNet-V2) (PyTorch >= 2.0.0) 
+- Training algorithm: Proactive Pseudo-Intervention (https://arxiv.org/abs/2012.03369)
+- Explainability method: GradCAM (https://github.com/jacobgil/pytorch-grad-cam)
+- Dataset: MIDRC-RICORD-1C (https://www.cancerimagingarchive.net/collection/midrc-ricord-1c/)
+    * Training set size: 1326
+    * Validation set size: 166
+    * Test set size: 166 
+- Hyperparameters: 100 epochs, StepLR(step_size=30,gamma=0.1), Adam(lr=1e-3), 16 batch size
